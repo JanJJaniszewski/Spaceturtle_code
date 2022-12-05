@@ -1,6 +1,7 @@
 *.pickle
 *.xml
 secrets.py
+Config/secrets.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
