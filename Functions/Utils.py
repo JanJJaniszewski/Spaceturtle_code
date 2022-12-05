@@ -1,9 +1,7 @@
-from xml.etree import ElementTree
-import csv
-import pandas as pd
-import re
 from sqlalchemy import create_engine
-import pymssql
+
+import Config.config_main as cm
+import Config.secrets as ss
 
 
 def sql_connect():
@@ -11,7 +9,7 @@ def sql_connect():
     Connects to SQL database
     :return: SQL database connection
     """
-    engine = create_engine("mssql+pymssql://spaceturtle:abKhzQip1|-l@spaceturtle.database.windows.net:1433/spaceturtle")
+    engine = create_engine(f"mssql+pymssql://{cm.username}:{ss.password}@{cm.server}:1433/{cm.database}")
     conn = engine.connect()
 
     return conn
